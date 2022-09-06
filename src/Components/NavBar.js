@@ -5,10 +5,10 @@ export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <nav className="  w-full bg-purple-500 shadow">
+    <nav className="h-24  w-full bg-orange-400 shadow">
       <div>
         <a href="#">
-          <h2 className="text-3xl font-bold text-white">LOGO</h2>
+          <h2 className="font-mono text-3xl font-bold text-white">CAR <span className="font-mono ">Tunza</span></h2>
         </a>
       </div>
 
@@ -59,30 +59,30 @@ export default function NavBar() {
               navbar ? "block" : "hidden"
             }`}
           >
-            <ul className="justify-center items-center  space-y-8 md:flex md:space-x-6 md:space-y-0">
-              <li className="text-white hover:text-red-800">
-                <NavLink className="nav-link " to="/">
-                  Home
+            <ul className="justify-center items-center  space-y-8 md:flex md:space-x-6 md:space-y-0 ">
+              <li className="text-white hover:text-black">
+                <NavLink className="hover:border-b-4 pb-2 border-white " to="/">
+                  HOME
                 </NavLink>
               </li>
-              <li className="text-white hover:text-red-800">
-                <NavLink className="nav-link " to="/about">
-                  About
+              <li className="text-white hover:text-black">
+                <NavLink className="hover:border-b-4 pb-2 border-white" to="/about">
+                  ABOUT
                 </NavLink>
               </li>
-              <li className="text-white hover:text-red-800">
-                <NavLink className="nav-link " to="/services">
-                  Services
+              <li className="text-white hover:text-black">
+                <NavLink className="hover:border-b-4 pb-2 border-white" to="/services">
+                  SERVICES
                 </NavLink>
               </li>
-              <li className="text-white hover:text-red-800">
-                <NavLink className="nav-link " to="/blog">
-                  Blog
+              <li className="text-white hover:text-black">
+                <NavLink className="hover:border-b-4 pb-2 border-white" to="/blog">
+                  BLOG
                 </NavLink>
               </li>
-              <li className="text-white hover:text-red-800">
-                <NavLink className="nav-link " to="/contact-us">
-                  Contact Us
+              <li className="text-white hover:text-black">
+                <NavLink className="hover:border-b-4 pb-2 border-white" to="/contact-us">
+                  CONTACT US
                 </NavLink>
               </li>
             </ul>
