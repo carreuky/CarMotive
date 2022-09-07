@@ -1,17 +1,29 @@
-import React from "react";
+import React,{ useState, useEffect } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import Team from "./Team";
 
 
 
 function About() {
+  const [team, setTeam] = useState([]);
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:9292/technicians")
+      .then((r) => r.json())
+      .then((data) => {
+        console.log(data)
+        setTeam(data);
+      });
+  }, []);
+
+
   return (
     <div>
 <h1 className="text-center font-bold text-2xl pt-5">Meet the Crew That Fixes Your Vehicles!</h1>
 <div className="mx-10 ">
    <div className="grid gap-6 mb-8 md:grid-cols-2 m-10">
-              <div className="min-w-0  bg-white rounded-lg shadow-xs dark:bg-gray-800">
-              <img class="h-auto rounded-t-lg md:rounded-none md:rounded-l-lg" src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="" />
+              <div className="min-w-0  bg-white rounded-lg shadow-xs">
+              <img className="h-auto rounded-t-lg md:rounded-none md:rounded-l-lg" src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="" />
               </div>
               <div className="mt-5 min-w-0 flex-wrap text-black rounded-lg ">
                 <p className="tracking-wide">
@@ -36,7 +48,7 @@ We’ve always been dedicated to accomplishing 3 critical milestones in each ser
               </div>
             </div>
 </div>
-<Team/>
+<Team team={team}/>
 </div>
   );
 }
