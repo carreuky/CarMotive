@@ -6,8 +6,8 @@ function Services() {
 
   const card=service.map((serv)=>{
     return(
-<div key={serv.id} class="block rounded-lg shadow-lg bg-white text-center  m-4">
-    <div class="py-3 px-6 font-bold  border-b border-gray-300">
+<div key={serv.id} class="block rounded-lg shadow-lg shadow-orange-300 bg-white text-center  m-4">
+    <div class="py-3 px-6 font-bold  border-b border-orange-300">
       {serv.task}
     </div>
     <div class="p-6">
@@ -15,7 +15,7 @@ function Services() {
         {serv.description}
       </p>
     </div>
-    <div class="py-3 px-6 border-t border-gray-300 text-gray-600">
+    <div class="py-3 px-6 border-t border-orange-300 text-gray-600">
       KSH {serv.price}
     </div>
   </div>
