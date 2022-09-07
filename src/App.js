@@ -1,8 +1,8 @@
 import "./App.css";
 import NavBar from "./Components/NavBar";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
-import Home from "./Components/Home";
-import About from "./Components/About";
+import Home from "./Components/HomeChild/Home";
+import About from "./Components/AboutChild/About";
 import Services from "./Components/Services";
 import Blog from "./Components/Blog";
 import ContactUs from "./Components/ContactUs";

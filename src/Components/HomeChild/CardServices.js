@@ -8,7 +8,7 @@ function CardServices() {
       <div className="text-center">
         <a
           href="#"
-          class="block p-6 max-w-xs bg-orange-400 rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+          class="h-80 block p-6 max-w-xs bg-orange-400 rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
         >
           <FaCog style={{ fontSize: "90px", marginLeft: "60px" }} />
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -23,7 +23,7 @@ function CardServices() {
       <div className="text-center">
         <a
           href="#"
-          class="block p-6 max-w-xs bg-orange-400 rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+          class=" h-80 block p-6 max-w-xs bg-orange-400 rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
         >
           <FaBolt style={{ fontSize: "90px", marginLeft: "60px" }} />
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -38,7 +38,7 @@ function CardServices() {
       <div className="text-center">
         <a
           href="#"
-          class="block p-6 max-w-xs bg-orange-400 rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+          class=" h-80 block p-6 max-w-xs bg-orange-400 rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
         >
           {" "}
           <GiHouseKeys style={{ fontSize: "90px", marginLeft: "60px" }} />
@@ -54,7 +54,7 @@ function CardServices() {
       <div className="text-center">
         <a
           href="#"
-          class="block p-6 max-w-xs bg-orange-400 rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+          class="h-80 block p-6 max-w-xs bg-orange-400 rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
         >
           <FaCarCrash
             style={{ color: "red", fontSize: "90px", marginLeft: "60px" }}
@@ -63,7 +63,7 @@ function CardServices() {
             ACCIDENTS TOWING
           </h5>
           <p class="font-normal text-gray-700 dark:text-gray-400">
-            Should your car ever get involved in an unfortunate accident and be
+            Got involved in an unfortunate accident and got
             stuck, we are ready to save the day!
           </p>
         </a>

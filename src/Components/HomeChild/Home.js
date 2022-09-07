@@ -1,7 +1,7 @@
 import React from "react";
-import Slide from "./HomeChild/Carousel";
-import CardServices from "./HomeChild/CardServices";
-import Welcome from "./HomeChild/Welcome";
+import Slide from "./Carousel";
+import CardServices from "./CardServices";
+import Welcome from "./Welcome";
 
 function Home() {
   return (
