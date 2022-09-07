@@ -10,13 +10,13 @@ function CardServices() {
           href="#"
           class="block p-6 max-w-xs bg-orange-400 rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
         >
-          <FaCog size="90px" />
+          <FaCog style={{ fontSize: "90px", marginLeft: "60px" }} />
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Noteworthy technology acquisitions 2021
+            PREVENT & REPAIR
           </h5>
           <p class="font-normal text-gray-700 dark:text-gray-400">
-            Here are the biggest enterprise technology acquisitions of 2021 so
-            far, in reverse chronological order.
+            We'll perform the car checkup and find issues with cooling system,
+            engine, steering and suspension for you!
           </p>
         </a>
       </div>
@@ -25,13 +25,13 @@ function CardServices() {
           href="#"
           class="block p-6 max-w-xs bg-orange-400 rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
         >
-          <FaBolt size="90px" />
+          <FaBolt style={{ fontSize: "90px", marginLeft: "60px" }} />
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Noteworthy technology acquisitions 2021
+            COMMON REPAIR
           </h5>
           <p class="font-normal text-gray-700 dark:text-gray-400">
-            Here are the biggest enterprise technology acquisitions of 2021 so
-            far, in reverse chronological order.
+            Each repair project puts before us a number of uniquue tasks, the
+            solution of which will help to achieve the highest results.
           </p>
         </a>
       </div>
@@ -41,13 +41,13 @@ function CardServices() {
           class="block p-6 max-w-xs bg-orange-400 rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
         >
           {" "}
-          <GiHouseKeys size="90px" />
+          <GiHouseKeys style={{ fontSize: "90px", marginLeft: "60px" }} />
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Noteworthy technology acquisitions 2021
+            CAR KEY REPAIR
           </h5>
           <p class="font-normal text-gray-700 dark:text-gray-400">
-            Here are the biggest enterprise technology acquisitions of 2021 so
-            far, in reverse chronological order.
+            Having your keys getting broken is always a hardly expected and a
+            stressful situation. Use of latest tech to solve.
           </p>
         </a>
       </div>
@@ -56,13 +56,15 @@ function CardServices() {
           href="#"
           class="block p-6 max-w-xs bg-orange-400 rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
         >
-          <FaCarCrash style={{color: 'red', fontSize: '90px', textAlign:'center'}} /> 
+          <FaCarCrash
+            style={{ color: "red", fontSize: "90px", marginLeft: "60px" }}
+          />
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Noteworthy technology acquisitions 2021
+            ACCIDENTS TOWING
           </h5>
           <p class="font-normal text-gray-700 dark:text-gray-400">
-            Here are the biggest enterprise technology acquisitions of 2021 so
-            far, in reverse chronological order.
+            Should your car ever get involved in an unfortunate accident and be
+            stuck, we are ready to save the day!
           </p>
         </a>
       </div>

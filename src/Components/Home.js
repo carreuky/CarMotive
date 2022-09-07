@@ -1,17 +1,16 @@
-import React from 'react'
-import Slide from './Carousel';
-import CardServices from './CardServices';
-import Welcome from './Welcome';
-
+import React from "react";
+import Slide from "./HomeChild/Carousel";
+import CardServices from "./HomeChild/CardServices";
+import Welcome from "./HomeChild/Welcome";
 
 function Home() {
- return(
+  return (
     <div>
-        <Slide/>
-        <CardServices/>
-        <Welcome />
+      <Slide />
+      <CardServices />
+      <Welcome />
     </div>
- )
+  );
 }
 
 export default Home;
