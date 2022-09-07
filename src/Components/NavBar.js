@@ -1,15 +1,16 @@
 //import logo from '../logo.png'
 import { useState } from "react";
+import {IoLogoXing} from 'react-icons/io'
 import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <nav className="h-16  w-full bg-orange-400 shadow">
+    <nav className=" flex h-16  w-full bg-orange-400 shadow">
       <div>
         <a href="#">
-        <i class="fa-solid fa-screwdriver-wrench"></i>
+        <h1 style={{fontSize:'30px' ,color:'black'}} className="flex "><IoLogoXing style={{fontSize:'65px'}}/> Car Tunza</h1>
         {/* <img src='' class="mr-3 h-6 sm:h-10" alt="Flowbite Logo" /> */}
         </a>
       </div>
@@ -63,7 +64,7 @@ export default function NavBar() {
           >
             <ul className="justify-center items-center  space-y-8 md:flex md:space-x-6 md:space-y-0 ">
               <li className="text-white hover:text-black">
-                <NavLink className="hover:border-b-4 pb-2 border-white " to="/">
+                <NavLink className="hover:border-b-4 pb-2 border-white  hover:bg-orange-400" to="/">
                   HOME
                 </NavLink>
               </li>

@@ -41,7 +41,7 @@ function Slide() {
             }}>
               <Carousel
                 data={data}
-                time={8000}
+                time={2000}
                 width='auto'
                 height="400px"
                 captionStyle={captionStyle}

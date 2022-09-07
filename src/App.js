@@ -6,6 +6,7 @@ import About from "./Components/About";
 import Services from "./Components/Services";
 import Blog from "./Components/Blog";
 import ContactUs from "./Components/ContactUs";
+//import Footer from "./Components/footer";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <ContactUs />
           </Route>
         </Switch>
+        {/* <Footer/> */}
       </BrowserRouter>
       {/* <header className="App-header">
         <p>
