@@ -1,3 +1,4 @@
+//import logo from '../logo.png'
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
@@ -5,10 +6,11 @@ export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <nav className="h-24  w-full bg-orange-400 shadow">
+    <nav className="h-16  w-full bg-orange-400 shadow">
       <div>
         <a href="#">
-          <h2 className="font-mono text-3xl font-bold text-white">CAR <span className="font-mono ">Tunza</span></h2>
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        {/* <img src='' class="mr-3 h-6 sm:h-10" alt="Flowbite Logo" /> */}
         </a>
       </div>
 
