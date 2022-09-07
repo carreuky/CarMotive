@@ -6,7 +6,7 @@ import About from "./Components/AboutChild/About";
 import Services from "./Components/Services";
 import Blog from "./Components/Blog";
 import ContactUs from "./Components/ContactUs";
-//import Footer from "./Components/footer";
+import Footer from "./Components/footer";
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function App() {
             <ContactUs />
           </Route>
         </Switch>
-        {/* <Footer/> */}
+        <Footer/>
       </BrowserRouter>
       {/* <header className="App-header">
         <p>
