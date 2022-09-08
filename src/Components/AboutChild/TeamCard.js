@@ -35,12 +35,12 @@ function TeamCard({ delMember, id, name, image, position, service, model }) {
       key={id}
       className="  text-center bg-orange-400 card rounded-md border-2 border-orange-500 w-64"
     >
-      <div className="bg-white hover-zoom ripple rounded-md ripple-surface ripple-surface-light">
+      <div className="bg-white hover-zoom ripple rounded-md rounded-b none ripple-surface ripple-surface-light">
         <img src={image} className="w-full h-40" />
       </div>
       <div className="card-body">
-        <h5>
-          <span className="text-2xl ms-2">{name}</span>
+        <h5 className="mt-4">
+          <span className="text-2xl ms-2 ">{name}</span>
         </h5>
 
         <a href="" className="text-reset">
@@ -52,7 +52,7 @@ function TeamCard({ delMember, id, name, image, position, service, model }) {
         <h6 className="mb-3 text-gray-700">Expert in {model} Models</h6>
       </div>
       {/* buttons group */}
-      <div className="inline-flex">
+      <div className="mb-4 inline-flex">
         <button
           onClick={handleDeleteClick}
           className="bg-white hover:bg-red-500 hover:text-white text-gray-800 font-bold py-1 px-2 rounded"
