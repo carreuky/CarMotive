@@ -7,7 +7,10 @@ import Team from "./Team";
 function About() {
   const [team, setTeam] = useState([]);
 
-  
+  function handleNew(newTech) {
+    console.log(newTech);
+    setTeam([...team, newTech]);
+  }
 
   function deleteMember(id) {
     const updatedTeam = team.filter((team) => team.id !== id);
@@ -19,7 +22,7 @@ function About() {
     fetch("http://127.0.0.1:9292/technicians")
       .then((r) => r.json())
       .then((data) => {
-        console.log(data)
+        // console.log(data)
         setTeam(data);
       });
   }, []);
@@ -56,7 +59,7 @@ We’ve always been dedicated to accomplishing 3 critical milestones in each ser
               </div>
             </div>
 </div>
-<Team team={team} delMember={deleteMember}/>
+<Team team={team} delMember={deleteMember} handleNew={handleNew}/>
 </div>
   );
 }

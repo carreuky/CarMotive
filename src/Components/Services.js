@@ -27,7 +27,7 @@ function Services() {
     fetch("http://127.0.0.1:9292/services")
       .then((r) => r.json())
       .then((data) => {
-        console.log(data)
+        // console.log(data)
         setService(data);
       });
   }, []);

@@ -2,12 +2,14 @@ import React,{useState} from "react";
 import CreateTech from "./CreateTech";
 import TeamCard from "./TeamCard";
 
-function Team({ team, delMember }) {
+function Team({ team, delMember ,handleNew}) {
   const [disp, SetDisp] = useState(false);
 
   function handleDisplay() {
     SetDisp(!disp);
   }
+
+
 
   const mems = team.map((mem) => {
     return (
@@ -24,7 +26,7 @@ function Team({ team, delMember }) {
     );
   });
 
-  console.log(team);
+  // console.log(team);
 
   const form = (
     <div className="ml-10 mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-5">
@@ -42,7 +44,7 @@ function Team({ team, delMember }) {
         {disp ? "View Team" : "Add Member"}
       </button>
       <div>
-        {disp?(<CreateTech />):(form)}
+        {disp?(<CreateTech handleDisplay={handleDisplay} handleNew={handleNew}/>):(form)}
       {/* {form}
         <CreateTech /> */}
       </div>
