@@ -62,9 +62,9 @@ function CreateTech({handleDisplay,handleNew}) {
     else if(model===''){
       alert('Enter model')
     }
-    else if(service===''){
-        alert('Enter service')
-    }
+    // else if(service===''){
+    //     alert('Enter service')
+    // }
     else{
     //   console.log(job);
       const newItem = {
@@ -72,7 +72,7 @@ function CreateTech({handleDisplay,handleNew}) {
         image: image,
         position: position,
         model: model,
-        sercive: service,
+        servive: service,
       };
   
       console.log(newItem);

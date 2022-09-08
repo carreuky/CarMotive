@@ -3,9 +3,9 @@ import React, { useState } from "react";
 function TeamCard({delMember, id, name, image, position, service, model }) {
   const [serviceDoing] = useState([service]);
   //console.log(customers.length)
-  const doing = serviceDoing.map((serv) => {
-    return serv.task;
-  });
+  // const doing = serviceDoing.map((serv) => {
+  //   return serv.task;
+  // });
   //console.log(service)
 
   //delete function
@@ -44,7 +44,7 @@ function TeamCard({delMember, id, name, image, position, service, model }) {
           <h5 className="font-normal text-gray-700 card-title ">{position}</h5>
         </a>
         <a href="" className="text-reset">
-          <p>{doing}</p>
+          {/* <p>{doing}</p> */}
         </a>
         <h6 className="mb-3 text-gray-700">Expert in {model} Models</h6>
       </div>
