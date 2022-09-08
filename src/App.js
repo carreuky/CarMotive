@@ -4,7 +4,7 @@ import { Switch, Route, BrowserRouter } from "react-router-dom";
 import Home from "./Components/HomeChild/Home";
 import About from "./Components/AboutChild/About";
 import Services from "./Components/Services";
-import Blog from "./Components/Blog";
+import Review from "./Components/Review";
 import ContactUs from "./Components/ContactUs";
 import Footer from "./Components/footer";
 
@@ -23,8 +23,8 @@ function App() {
           <Route exact path="/services">
             <Services />
           </Route>
-          <Route exact path="/blog">
-            <Blog />
+          <Route exact path="/reviews">
+            <Review />
           </Route>
           <Route exact path="/contact-us">
             <ContactUs />

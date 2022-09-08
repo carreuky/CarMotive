@@ -79,8 +79,8 @@ export default function NavBar() {
                 </NavLink>
               </li>
               <li className="text-white hover:text-black">
-                <NavLink className="hover:border-b-4 pb-2 border-white" to="/blog">
-                  BLOG
+                <NavLink className="hover:border-b-4 pb-2 border-white" to="/reviews">
+                  REVIEWS
                 </NavLink>
               </li>
               <li className="text-white hover:text-black">
