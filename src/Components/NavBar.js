@@ -1,17 +1,19 @@
 //import logo from '../logo.png'
 import { useState } from "react";
-import {IoLogoXing} from 'react-icons/io'
+import { IoLogoXing } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
-  const [navbar, setNavbar] = useState(false);
+  const [navbar, setNavbar] = useState(true);
 
   return (
     <nav className=" flex h-16  w-full bg-orange-400 shadow">
       <div>
         <a href="#">
-        <h1 style={{fontSize:'30px' ,color:'black'}} className="flex "><IoLogoXing style={{fontSize:'65px'}}/> Car Tunza</h1>
-        {/* <img src='' class="mr-3 h-6 sm:h-10" alt="Flowbite Logo" /> */}
+          <h1 style={{ fontSize: "30px", color: "black" }} className="flex ">
+            <IoLogoXing style={{ fontSize: "65px" }} /> Car Tunza
+          </h1>
+          {/* <img src='' class="mr-3 h-6 sm:h-10" alt="Flowbite Logo" /> */}
         </a>
       </div>
 
@@ -26,7 +28,7 @@ export default function NavBar() {
                 {navbar ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 text-white"
+                    className="w-6 h-6 text-black"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -39,7 +41,7 @@ export default function NavBar() {
                 ) : (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 text-white"
+                    className="w-6 h-6 text-black"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -63,28 +65,43 @@ export default function NavBar() {
             }`}
           >
             <ul className="justify-center items-center  space-y-8 md:flex md:space-x-6 md:space-y-0 ">
-              <li className="text-white hover:text-black">
-                <NavLink className="hover:border-b-4 pb-2 border-white  hover:bg-orange-400" to="/">
+              <li className="hover:bg-orange-400  bg-orange-400 text-white hover:text-black">
+                <NavLink
+                  className="hover:bg-orange-400 hover:border-b-4 pb-2 border-white  hover:bg-orange-400"
+                  to="/"
+                >
                   HOME
                 </NavLink>
               </li>
               <li className="text-white hover:text-black">
-                <NavLink className="hover:border-b-4 pb-2 border-white" to="/about">
+                <NavLink
+                  className="hover:bg-orange-400 hover:border-b-4 pb-2 border-white"
+                  to="/about"
+                >
                   ABOUT
                 </NavLink>
               </li>
               <li className="text-white hover:text-black">
-                <NavLink className="hover:border-b-4 pb-2 border-white" to="/services">
+                <NavLink
+                  className="hover:bg-orange-400 hover:border-b-4 pb-2 border-white"
+                  to="/services"
+                >
                   SERVICES
                 </NavLink>
               </li>
               <li className="text-white hover:text-black">
-                <NavLink className="hover:border-b-4 pb-2 border-white" to="/reviews">
+                <NavLink
+                  className="hover:bg-orange-400 hover:border-b-4 pb-2 border-white"
+                  to="/reviews"
+                >
                   REVIEWS
                 </NavLink>
               </li>
               <li className="text-white hover:text-black">
-                <NavLink className="hover:border-b-4 pb-2 border-white" to="/contact-us">
+                <NavLink
+                  className="hover:border-b-4 pb-2 border-white"
+                  to="/contact-us"
+                >
                   CONTACT US
                 </NavLink>
               </li>
