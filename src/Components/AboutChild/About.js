@@ -7,6 +7,7 @@ import Team from "./Team";
 function About() {
   const [team, setTeam] = useState([]);
 
+
   useEffect(() => {
     fetch("http://127.0.0.1:9292/technicians")
       .then((r) => r.json())

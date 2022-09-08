@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from "react";
+import React,{ useState} from "react";
 import { GoQuote} from "react-icons/go";
 
 
@@ -17,9 +17,9 @@ function ReviewCard({key,review,customer}) {
         <div key={key} className="w-full md:w-1/3 p-5">
           <div className="h-full p-0.5 bg-gradient-to-r p-[2px] from-[#E7D36E] via-[#C97016] to-[#EDDA2F] transform hover:-translate-y-3 rounded-10 transition ease-out duration-1000 rounded-lg">
             <div className="h-full px-7 py-8 bg-white rounded-lg">
-            <GoQuote style={{fontSize:'15px'}}/>
+            <GoQuote style={{fontSize:'15px',color:'orange'}}/>
               <p
-                className="mb-8 ml-4 text-lg font-light text-gray-900"
+                className="mb-8 ml-4 text-gray-700 text-base"
                 data-config-id="auto-txt-3-1"
               >{review}
               </p>
