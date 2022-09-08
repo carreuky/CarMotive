@@ -7,6 +7,13 @@ import Team from "./Team";
 function About() {
   const [team, setTeam] = useState([]);
 
+  
+
+  function deleteMember(id) {
+    const updatedTeam = team.filter((team) => team.id !== id);
+  //  console.log(updatedTeam.length)
+    setTeam(updatedTeam);
+  }
 
   useEffect(() => {
     fetch("http://127.0.0.1:9292/technicians")
@@ -49,7 +56,7 @@ We’ve always been dedicated to accomplishing 3 critical milestones in each ser
               </div>
             </div>
 </div>
-<Team team={team}/>
+<Team team={team} delMember={deleteMember}/>
 </div>
   );
 }

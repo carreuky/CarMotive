@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function TeamCard({ id, name, image, position, service, model }) {
+function TeamCard({delMember, id, name, image, position, service, model }) {
   const [serviceDoing] = useState([service]);
   //console.log(customers.length)
   const doing = serviceDoing.map((serv) => {
@@ -19,11 +19,12 @@ function TeamCard({ id, name, image, position, service, model }) {
   // }
   function handleDeleteClick(){
     console.log(id)
-    fetch(`http://127.0.0.1:9292/technicians/${id}`, {
-      method: "DELETE",
-  }) 
-  .then((r) => r.json())
-  .then(() => handleDelete(id));
+  //   fetch(`http://127.0.0.1:9292/technicians/${id}`, {
+  //     method: "DELETE",
+  // }) 
+  // .then((r) => r.json())
+  // .then(() => delMember(id));
+  delMember(id)
   }
 
   return (

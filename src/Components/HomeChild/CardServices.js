@@ -4,6 +4,7 @@ import { GiHouseKeys } from "react-icons/gi";
 
 function CardServices() {
   return (
+  <div className="flex justify-center">
     <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-5">
       <div className="text-center">
         <a
@@ -68,6 +69,7 @@ function CardServices() {
           </p>
         </a>
       </div>
+    </div>
     </div>
   );
 }

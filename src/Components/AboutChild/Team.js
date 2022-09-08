@@ -1,11 +1,19 @@
-import React from "react";
+import React,{useState} from "react";
+import CreateTech from "./CreateTech";
 import TeamCard from "./TeamCard";
 
-function Team({ team }) {
+function Team({ team, delMember }) {
+  const [disp, SetDisp] = useState(false);
+
+  function handleDisplay() {
+    SetDisp(!disp);
+  }
+
   const mems = team.map((mem) => {
     return (
       //console.log(mem)
       <TeamCard
+        delMember={delMember}
         id={mem.id}
         name={mem.name}
         image={mem.image}
@@ -18,92 +26,25 @@ function Team({ team }) {
 
   console.log(team);
 
+  const form = (
+    <div className="ml-10 mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+      {/* <TeamCard/> */}
+      {mems}
+    </div>
+  );
+
   return (
     <>
       <div>
         <h1 className="text-center font-bold text-2xl pt-5">The Team</h1>
       </div>
-      <div className="m-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-5">
-        {/* <TeamCard/> */}
-        {mems}
-        <button className="bg-orange-500 hover:bg-black text-white font-bold py-2 px-2 rounded-full w-36">
-          Add Technician
-        </button>
-      </div>
+      <button onClick={handleDisplay} className="bg-orange-500 hover:bg-black text-white font-bold py-2 px-2 mx-10 rounded-full w-36">
+        {disp ? "View Team" : "Add Member"}
+      </button>
       <div>
-        <form className="m-20 bg-orange-400 shadow-md rounded px-8 pt-6 pb-8 mb-4 w-96">
-          <div className="mb-4">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              for="name"
-            >
-              Technician name
-            </label>
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="username"
-              type="text"
-              placeholder="Username"
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              for="name"
-            >
-              Image Url
-            </label>
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              type="url"
-              placeholder="https://example.com"
-              pattern="https://.*"
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              for="text"
-            >
-              Position
-            </label>
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              id="password"
-              type="text"
-              placeholder="Position"
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              for="text"
-            >
-              Car Model Expertise
-            </label>
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              id="password"
-              type="text"
-              placeholder="Car Model"
-            />
-          </div>
-          <div className="mb-4">
-            <select className="block appearance-none w-full bg-white border border-orange-400 hover:border-orange-400 px-4 py-2 pr-6 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-              <option>Color Change</option>
-              <option>Motor Tuning</option>
-              <option>Accident Towing</option>
-              <option>Car Key Repair</option>
-              <option>Car Repair</option>
-            </select>
-          </div>
-          <button
-            className="bg-white hover:bg-black text-black hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="button"
-          >
-            Submit
-          </button>
-        </form>
+        {disp?(<CreateTech />):(form)}
+      {/* {form}
+        <CreateTech /> */}
       </div>
     </>
   );
