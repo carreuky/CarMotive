@@ -36,11 +36,11 @@ function TeamCard({ delMember, id, name, image, position, service, model }) {
       className="  text-center bg-orange-400 card rounded-md border-2 border-orange-500 w-64"
     >
       <div className="bg-white hover-zoom ripple rounded-md rounded-b none ripple-surface ripple-surface-light">
-        <img src={image} className="w-full h-40" />
+        <img src={image} className="w-full h-56 object-cover" />
       </div>
       <div className="card-body">
         <h5 className="mt-4">
-          <span className="text-2xl ms-2 ">{name}</span>
+          <span className=" ms-2 ">{name}</span>
         </h5>
 
         <a href="" className="text-reset">

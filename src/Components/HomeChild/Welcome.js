@@ -3,10 +3,10 @@ import React from "react";
 function Welcome() {
   return (
     <div>
-      <div class=" mx-10 p-5 bg-orange-400 flex justify-center">
-          <div class=" flex flex-col justify-center items-center text-center">
-            <h5 class="text-5xl mb-2 font-bold tracking-tight text-gray-900 dark:text-white">WELCOME</h5>
-            <h1 class="text-lg mb-4 border-b-4 border-black font-bold tracking-tight text-gray-900 dark:text-white">
+      <div className=" mx-10 p-5 bg-orange-400 flex justify-center">
+          <div className=" flex flex-col justify-center items-center text-center">
+            <h5 className="text-5xl mb-2 font-bold tracking-tight text-gray-900 dark:text-white">WELCOME</h5>
+            <h1 className="text-lg mb-4 border-b-4 border-black font-bold tracking-tight text-gray-900 dark:text-white">
               TO OUR COMPANY!
             </h1>
             <p className="w-full font-normal text-gray-700 dark:text-gray-400  ">Car Tunza is a crew of true auto enthusiast, all of whom are sincerely passionate about enhancing the performance and looks of your car! All the creativity, 

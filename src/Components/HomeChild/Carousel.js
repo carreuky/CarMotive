@@ -47,7 +47,7 @@ function Slide() {
             data={data}
             time={2000}
             width="auto"
-            height="400px"
+            height="600px"
             captionStyle={captionStyle}
             // slideNumber={true}
             captionPosition="center"
@@ -56,7 +56,7 @@ function Slide() {
             pauseIconColor="white"
             pauseIconSize="40px"
             // slideBackgroundColor="darkgrey"
-            slideImageFit="cover"
+            slideImageFit="fit"
             style={{
               textAlign: "center",
               maxWidth: "auto",

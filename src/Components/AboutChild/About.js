@@ -4,6 +4,7 @@ import Team from "./Team";
 
 function About() {
   const [team, setTeam] = useState([]);
+  const [unMutated, setUnMutated] = useState([]);
 
   function handleNew(newTech) {
     console.log(newTech);
@@ -16,12 +17,26 @@ function About() {
     setTeam(updatedTeam);
   }
 
+  function searchHandle(value) {
+    console.log(value)
+    const searchedMember = unMutated.filter(
+      (mem) =>
+        mem.name.toLowerCase().includes(value.toLowerCase()) ||
+        mem.position.toLowerCase().includes(value.toLowerCase()) ||
+        mem.carmodel.toLowerCase().includes(value.toLowerCase())
+    );
+    
+      setTeam(searchedMember)
+
+  }
+
   useEffect(() => {
     fetch("http://127.0.0.1:9292/technicians")
       .then((r) => r.json())
       .then((data) => {
         // console.log(data)
         setTeam(data);
+        setUnMutated(data)
       });
   }, []);
 
@@ -86,7 +101,7 @@ function About() {
           </div>
         </div>
       </div>
-      <Team team={team} delMember={deleteMember} handleNew={handleNew} />
+      <Team team={team} delMember={deleteMember} handleNew={handleNew} searchHandle={searchHandle} />
     </div>
   );
 }

@@ -7,16 +7,16 @@ function Services() {
     return (
       <div
         key={serv.id}
-        class="block rounded-lg shadow-lg shadow-orange-300 bg-white text-center  m-4"
+        className="block rounded-lg shadow-lg shadow-orange-300 bg-white text-center  m-4"
       >
-        <div class="py-3 px-6 font-bold  border-b border-orange-300">
+        <div className="py-3 px-6 font-bold  border-b border-orange-300">
           {serv.task}
         </div>
-        <div class="p-6">
-          <p class="text-gray-700 text-base mb-4">{serv.description}</p>
+        <div className="p-6">
+          <p className="text-gray-700 text-base mb-4">{serv.description}</p>
         </div>
-        <div class="py-3 px-6 border-t border-orange-300 text-gray-600">
-          KSH {serv.price}
+        <div className="py-3 px-6  font-bold border-t border-orange-300 ">
+          KSH {serv.price} 
         </div>
       </div>
     );
@@ -45,7 +45,7 @@ function Services() {
             awesome!
           </p>
         </div>
-        <div class="m-10 flex justify-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+        <div className="m-10 flex justify-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
           {card}
         </div>
       </div>
