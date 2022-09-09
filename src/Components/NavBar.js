@@ -4,10 +4,10 @@ import { IoLogoXing } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
-  const [navbar, setNavbar] = useState(true);
+  // const [navbar, setNavbar] = useState(true);
 
   return (
-    <nav className=" flex h-16  w-full bg-orange-400 shadow">
+    <nav className=" flex h-18  w-full bg-orange-400 shadow">
       <div>
         <a href="#">
           <h1 style={{ fontSize: "30px", color: "black" }} className="flex ">
@@ -19,9 +19,9 @@ export default function NavBar() {
 
       <div className="justify-center  mx-auto lg:max-w-9xl md:items-center md:flex md:px-5">
         <div>
-          <div className="flex items-center justify-between py-3 md:py-5 md:block">
+          <div className="flex items-center justify-between py-3 md:block">
             <div className="md:hidden">
-              <button
+              {/* <button
                 className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
                 onClick={() => setNavbar(!navbar)}
               >
@@ -54,17 +54,17 @@ export default function NavBar() {
                     />
                   </svg>
                 )}
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
         <div>
           <div
-            className={`flex-1 justify-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-              navbar ? "block" : "hidden"
-            }`}
+            // className={`flex-1 justify-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+            //   navbar ? "block" : "block"
+            // }`}
           >
-            <ul className="justify-center items-center  space-y-8 md:flex md:space-x-6 md:space-y-0 ">
+            <ul className="justify-center items-center md:flex md:space-x-6 md:space-y-0 grid grid-cols-2 sm:grid-cols-3">
               <li className="hover:bg-orange-400  bg-orange-400 text-white hover:text-black">
                 <NavLink
                   className="hover:bg-orange-400 hover:border-b-4 pb-2 border-white  hover:bg-orange-400"

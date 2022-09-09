@@ -18,7 +18,7 @@ function Review() {
     
 
     useEffect(() => {
-        fetch("http://127.0.0.1:9292/reviews")
+        fetch("https://carmotive-sinatra-backend.herokuapp.com/reviews")
           .then((r) => r.json())
           .then((data) => {
             console.log('fff')

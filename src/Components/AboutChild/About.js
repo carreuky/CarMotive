@@ -18,7 +18,7 @@ function About() {
   }
 
   function searchHandle(value) {
-    console.log(value)
+    // console.log(value)
     const searchedMember = unMutated.filter(
       (mem) =>
         mem.name.toLowerCase().includes(value.toLowerCase()) ||
@@ -28,10 +28,12 @@ function About() {
     
       setTeam(searchedMember)
 
+    
+
   }
 
   useEffect(() => {
-    fetch("http://127.0.0.1:9292/technicians")
+    fetch("https://carmotive-sinatra-backend.herokuapp.com/technicians")
       .then((r) => r.json())
       .then((data) => {
         // console.log(data)

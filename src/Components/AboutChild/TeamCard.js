@@ -59,9 +59,9 @@ function TeamCard({ delMember, id, name, image, position, service, model }) {
         >
           Delete
         </button>
-        <button className="bg-white hover:bg-black hover:text-white text-gray-800 font-bold py-1 px-2 rounded mx-4">
+        {/* <button className="bg-white hover:bg-black hover:text-white text-gray-800 font-bold py-1 px-2 rounded mx-4">
           Edit
-        </button>
+        </button> */}
       </div>
     </div>
   );
