@@ -23,7 +23,7 @@ function Services() {
   });
 
   useEffect(() => {
-    fetch("http://127.0.0.1:9292/services")
+    fetch("https://carmotive-sinatra-backend.herokuapp.com/services")
       .then((r) => r.json())
       .then((data) => {
         // console.log(data)

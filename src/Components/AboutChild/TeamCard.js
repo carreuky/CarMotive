@@ -22,7 +22,7 @@ function TeamCard({ delMember, id, name, image, position, service, model }) {
 
   function handleDeleteClick() {
     console.log(id);
-    fetch(`http://127.0.0.1:9292/technicians/${id}`, {
+    fetch(`https://carmotive-sinatra-backend.herokuapp.com/technicians/${id}`, {
       method: "DELETE",
     })
       .then((r) => r.json())
