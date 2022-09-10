@@ -11,8 +11,6 @@ function ReviewCard({key,review,customer}) {
         )
     })
 
-
-
   return (
         <div key={key} className="w-full md:w-1/3 p-5">
           <div className="h-full p-0.5 bg-gradient-to-r p-[2px] from-[#E7D36E] via-[#C97016] to-[#EDDA2F] transform hover:-translate-y-3 rounded-10 transition ease-out duration-1000 rounded-lg">

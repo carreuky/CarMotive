@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function CreateTech({ handleDisplay, handleNew }) {
+function CreateTech({ handleDisplay, handleNew ,idt,namet,modelt,positiont,modelt,servicet}) {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [position, setPosition] = useState("");
@@ -43,6 +43,7 @@ function CreateTech({ handleDisplay, handleNew }) {
     else return setService(4);
   }
 
+
   function handleSubmit(e) {
     e.preventDefault();
     if (name === "") {
@@ -68,7 +69,7 @@ function CreateTech({ handleDisplay, handleNew }) {
       };
 
       console.log(newItem);
-      fetch("http://localhost:9292/technicians", {
+      fetch("https://carmotive-sinatra-backend.herokuapp.com/technicians", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -143,6 +144,9 @@ function CreateTech({ handleDisplay, handleNew }) {
           />
         </div>
         <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2">
+            Select Profesionalism
+          </label>
           <select
             onChange={handleService}
             className="block appearance-none w-full bg-white border border-orange-400 hover:border-orange-400 px-4 py-2 pr-6 rounded shadow leading-tight focus:outline-none focus:shadow-outline"

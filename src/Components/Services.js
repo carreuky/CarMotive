@@ -45,7 +45,7 @@ function Services() {
             awesome!
           </p>
         </div>
-        <div className="m-10 flex justify-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+        <div className="m-10 flex justify-center content-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
           {card}
         </div>
       </div>

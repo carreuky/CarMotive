@@ -5,6 +5,7 @@ import Team from "./Team";
 function About() {
   const [team, setTeam] = useState([]);
   const [unMutated, setUnMutated] = useState([]);
+  const [not, setNot] = useState(false)
 
   function handleNew(newTech) {
     console.log(newTech);
@@ -25,8 +26,13 @@ function About() {
         mem.position.toLowerCase().includes(value.toLowerCase()) ||
         mem.carmodel.toLowerCase().includes(value.toLowerCase())
     );
-    
+
+    if(searchedMember !==0){
       setTeam(searchedMember)
+    }
+    else
+      setNot(!not)
+    
 
     
 
@@ -103,7 +109,7 @@ function About() {
           </div>
         </div>
       </div>
-      <Team team={team} delMember={deleteMember} handleNew={handleNew} searchHandle={searchHandle} />
+      <Team team={team} not={not} delMember={deleteMember} handleNew={handleNew} searchHandle={searchHandle} />
     </div>
   );
 }

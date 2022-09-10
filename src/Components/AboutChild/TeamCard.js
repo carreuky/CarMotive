@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
-function TeamCard({ delMember, id, name, image, position, service, model }) {
+function TeamCard({SetDisp,disp,handle, delMember, id, name, image, position, service, model }) {
+
   // console.log(service)
   // const [serviceDoing] = useState([service]);
   //console.log(customers.length)
@@ -27,16 +28,22 @@ function TeamCard({ delMember, id, name, image, position, service, model }) {
     })
       .then((r) => r.json())
       .then(() => delMember(id));
-    //delMember(id)
+    delMember(id)
   }
+
+  function handlegetIDUpdate(id , name, image, position, model) {
+    console.log(id, name, image, position, model)
+    SetDisp(!disp);
+    handle(id, name, image, position, model)
+  }
+
 
   return (
     <div
-      key={id}
       className="  text-center bg-orange-400 card rounded-md border-2 border-orange-500 w-64"
     >
       <div className="bg-white hover-zoom ripple rounded-md rounded-b none ripple-surface ripple-surface-light">
-        <img src={image} className="w-full h-56 object-cover" />
+        <img src={image} className="w-full h-56 object-cover" alt="g" />
       </div>
       <div className="card-body">
         <h5 className="mt-4">
@@ -52,16 +59,19 @@ function TeamCard({ delMember, id, name, image, position, service, model }) {
         <h6 className="mb-3 text-gray-700">Expert in {model} Models</h6>
       </div>
       {/* buttons group */}
-      <div className="mb-4 inline-flex">
+      <div className="mb-4 inline-flex ">
         <button
           onClick={handleDeleteClick}
           className="bg-white hover:bg-red-500 hover:text-white text-gray-800 font-bold py-1 px-2 rounded"
         >
           Delete
         </button>
-        {/* <button className="bg-white hover:bg-black hover:text-white text-gray-800 font-bold py-1 px-2 rounded mx-4">
+        <button
+          onClick={()=>{handlegetIDUpdate(id , name, image, position, model)}}
+          className="bg-white hover:bg-black hover:text-white text-gray-800 font-bold py-1 px-2 rounded mx-4"
+        >
           Edit
-        </button> */}
+        </button>
       </div>
     </div>
   );

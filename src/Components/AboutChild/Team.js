@@ -2,17 +2,44 @@ import React, { useState } from "react";
 import CreateTech from "./CreateTech";
 import TeamCard from "./TeamCard";
 
-function Team({ team, delMember, handleNew ,searchHandle }) {
-  const [disp, SetDisp] = useState(false);
+function Team({ team, delMember, handleNew, searchHandle }) {
+  const [disp, SetDisp] = useState(false);  
+  const [idt, SetIdt] = useState('');
+  const [name, SetName] = useState('');
+  const [image, SetImage] = useState('');
+  const [model, SetModel] = useState('');
+  const [position, SetPosition] = useState('');
+
+  // const [notfound, SetNotFound] = useState(false);
 
   function handleDisplay() {
     SetDisp(!disp);
+  }
+
+  // console.log(team.length);
+
+  // if (team.length ===0){
+  //   SetNotFound(!notfound)
+  // }
+  // const notP = (<p>Not Found</p>)
+  function handleUp(id, name, image, position, model){
+    console.log(id, name, image, position, model)
+    SetIdt(id)
+    SetName(name)
+    SetImage(image)
+    SetPosition(position)
+    SetModel(model)
+    // console.log(team[id])
   }
 
   const mems = team.map((mem) => {
     return (
       //console.log(mem)
       <TeamCard
+      disp={disp}
+      SetDisp={SetDisp}
+      key={mem.id}
+        handle={handleUp}
         delMember={delMember}
         id={mem.id}
         name={mem.name}
@@ -24,12 +51,10 @@ function Team({ team, delMember, handleNew ,searchHandle }) {
     );
   });
 
-  // console.log(team);
-
   const form = (
-    <div className="mx-24 mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-      {/* <TeamCard/> */}
+    <div className="mx-24  mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-5">
       {mems}
+      {/* {not ? notP:{mems}} */}
     </div>
   );
 
@@ -55,7 +80,7 @@ function Team({ team, delMember, handleNew ,searchHandle }) {
       </div>
       <div>
         {disp ? (
-          <CreateTech handleDisplay={handleDisplay} handleNew={handleNew} />
+          <CreateTech handleDisplay={handleDisplay} handleNew={handleNew} idt={idt} imaget={image} namet={name} positiont={position} modelt={model} />
         ) : (
           form
         )}
