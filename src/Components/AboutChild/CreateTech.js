@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 
-function CreateTech({ handleDisplay, handleNew ,idt,namet,modelt,positiont,modelt,servicet}) {
+function CreateTech({ handleDisplay,handleNew,but,idt, namet, imaget, positiont, servicet, modelt }) {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [position, setPosition] = useState("");
   const [model, setModel] = useState("");
   const [service, setService] = useState("");
 
+
   //name value
   function handleName(e) {
     console.log(e.target.value);
     setName(e.target.value);
   }
+  
+
 
   //image value
   function handleImage(e) {
@@ -99,6 +102,7 @@ function CreateTech({ handleDisplay, handleNew ,idt,namet,modelt,positiont,model
               Technician name
             </label>
             <input
+              value={namet}
               onChange={handleName}
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="username"
@@ -111,6 +115,7 @@ function CreateTech({ handleDisplay, handleNew ,idt,namet,modelt,positiont,model
               Image Url
             </label>
             <input
+              value={imaget}
               onChange={handleImage}
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="url"
@@ -123,6 +128,7 @@ function CreateTech({ handleDisplay, handleNew ,idt,namet,modelt,positiont,model
               Position
             </label>
             <input
+              value={positiont}
               onChange={handlePosition}
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
               id="password"
@@ -136,6 +142,7 @@ function CreateTech({ handleDisplay, handleNew ,idt,namet,modelt,positiont,model
             Car Model Expertise
           </label>
           <input
+            value={modelt}
             onChange={handleModel}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
             id="password"
@@ -148,6 +155,7 @@ function CreateTech({ handleDisplay, handleNew ,idt,namet,modelt,positiont,model
             Select Profesionalism
           </label>
           <select
+            value={servicet}
             onChange={handleService}
             className="block appearance-none w-full bg-white border border-orange-400 hover:border-orange-400 px-4 py-2 pr-6 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
           >
@@ -165,6 +173,7 @@ function CreateTech({ handleDisplay, handleNew ,idt,namet,modelt,positiont,model
           name="submit"
           id="submit"
         /> */}
+        {but ?
         <button
           onClick={handleSubmit}
           className="bg-white hover:bg-black text-black hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
@@ -172,6 +181,15 @@ function CreateTech({ handleDisplay, handleNew ,idt,namet,modelt,positiont,model
         >
           Submit
         </button>
+        :
+        <button
+          onClick={handleSubmit}
+          className="bg-white hover:bg-black text-black hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="button"
+        >
+          Submit
+        </button>
+}
       </form>
     </div>
   );

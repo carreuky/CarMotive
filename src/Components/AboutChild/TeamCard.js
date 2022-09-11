@@ -1,14 +1,8 @@
-import React from "react";
+import React,{useState} from "react";
 
-function TeamCard({SetDisp,disp,handle, delMember, id, name, image, position, service, model }) {
-
-  // console.log(service)
-  // const [serviceDoing] = useState([service]);
-  //console.log(customers.length)
-  // const doing = serviceDoing.map((serv) => {
-  //   return serv.task;
-  // });
-  //console.log(service)
+function TeamCard({SetDisp,disp,handle, delMember, id, name, image, position, service, model  }) {
+  const [butg, SetBut] = useState(false);  
+  console.log(butg)
 
   const doing = () => {
     if (service === 1) return "Color Change";
@@ -34,7 +28,8 @@ function TeamCard({SetDisp,disp,handle, delMember, id, name, image, position, se
   function handlegetIDUpdate(id , name, image, position, model) {
     console.log(id, name, image, position, model)
     SetDisp(!disp);
-    handle(id, name, image, position, model)
+    //SetBut(!butg)
+    handle(id, name, image, position, model,butg)
   }
 
 

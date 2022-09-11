@@ -8,7 +8,10 @@ function Team({ team, delMember, handleNew, searchHandle }) {
   const [name, SetName] = useState('');
   const [image, SetImage] = useState('');
   const [model, SetModel] = useState('');
-  const [position, SetPosition] = useState('');
+  const [position, SetPosition] = useState('');  
+  const [servicet, SetServicet] = useState('');
+  const [butt,SetButt]=useState()
+
 
   // const [notfound, SetNotFound] = useState(false);
 
@@ -16,19 +19,17 @@ function Team({ team, delMember, handleNew, searchHandle }) {
     SetDisp(!disp);
   }
 
-  // console.log(team.length);
-
-  // if (team.length ===0){
-  //   SetNotFound(!notfound)
-  // }
-  // const notP = (<p>Not Found</p>)
-  function handleUp(id, name, image, position, model){
-    console.log(id, name, image, position, model)
+ 
+  function handleUp(id, name, image, position, model,service,butg){
+    // console.log(id, name, image, position, model)
     SetIdt(id)
     SetName(name)
     SetImage(image)
     SetPosition(position)
     SetModel(model)
+    SetServicet(service)
+    // SetButt(but)
+    console.log(butg)
     // console.log(team[id])
   }
 
@@ -80,7 +81,7 @@ function Team({ team, delMember, handleNew, searchHandle }) {
       </div>
       <div>
         {disp ? (
-          <CreateTech handleDisplay={handleDisplay} handleNew={handleNew} idt={idt} imaget={image} namet={name} positiont={position} modelt={model} />
+          <CreateTech handleDisplay={handleDisplay} but={butt} handleNew={handleNew} idt={idt} imaget={image} namet={name} positiont={position} modelt={model} servicet={servicet}/>
         ) : (
           form
         )}
