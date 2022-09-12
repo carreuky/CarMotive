@@ -4,7 +4,7 @@ import TeamCard from "./TeamCard";
 
 function Team({updateList, team, delMember, handleNew, searchHandle }) {
   const [disp, SetDisp] = useState(false);  
-  const [id, setId] = useState('');
+  const [idp, setId] = useState('');
   const [name, setName] = useState('');
   const [image, setImage] = useState('');
   const [model, setModel] = useState('');
@@ -28,7 +28,7 @@ function Team({updateList, team, delMember, handleNew, searchHandle }) {
     setModel(model)
     setService(service)
     SetButt(butg)
-    console.log(butg);
+    console.log(service)
 
   }
 
@@ -80,7 +80,7 @@ function Team({updateList, team, delMember, handleNew, searchHandle }) {
       </div>
       <div>
         {disp ? (
-          <CreateTech updateList={updateList} handleDisplay={handleDisplay} but={butt} handleNew={handleNew} setId={setId} name={name} image={image} setImage={setImage} service={service} setService={setService} setName={setName} position={position} setPosition={setPosition} setModel={setModel} model={model} />
+          <CreateTech idp={idp} updateList={updateList} handleDisplay={handleDisplay} but={butt} handleNew={handleNew} setId={setId} name={name} image={image} setImage={setImage} service={service} setService={setService} setName={setName} position={position} setPosition={setPosition} setModel={setModel} model={model} />
         ) : (
           form
         )}

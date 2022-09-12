@@ -15,7 +15,6 @@ function TeamCard({SetDisp,disp,handle, delMember, id, name, image, position, se
   // console.log(txt)
 
   function handleDeleteClick() {
-    console.log(id);
     fetch(`https://carmotive-sinatra-backend.herokuapp.com/technicians/${id}`, {
       method: "DELETE",
     })
@@ -59,12 +58,13 @@ function TeamCard({SetDisp,disp,handle, delMember, id, name, image, position, se
         >
           Delete
         </button>
-        <button
+        {/* <button
           onClick={()=>{handlegetIDUpdate(id , name, image, position, model,service)}}
+          // onClick={()=>console.log(service)}
           className="bg-white hover:bg-black hover:text-white text-gray-800 font-bold py-1 px-2 rounded mx-4"
         >
           Edit
-        </button>
+        </button> */}
       </div>
     </div>
   );

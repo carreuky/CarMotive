@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 function CreateTech({
   updateList,
@@ -10,7 +10,7 @@ function CreateTech({
   setService,
   setPosition,
   setModel,
-  id,
+  idp,
   name,
   image,
   position,
@@ -25,65 +25,44 @@ function CreateTech({
 
   //name value
   function handleName(e) {
-    console.log(e.target.value);
     setName(e.target.value);
-    console.log(name);
+    // console.log(name);
   }
 
   //image value
   function handleImage(e) {
-    console.log(e.target.value);
     setImage(e.target.value);
   }
 
   //position value
   function handlePosition(e) {
-    console.log(e.target.value);
     setPosition(e.target.value);
   }
 
   //model value
   function handleModel(e) {
-    console.log(e.target.value);
     setModel(e.target.value);
   }
 
   //service select
   function handleService(e) {
-    console.log(e.target.value);
     setService(e.target.value);
-    console.log(service);
-
-    if (service === "Color Change") return setService(1);
-    else if (service === "Motor Tuning") return setService(2);
-    else if (service === "Accident Towing") return setService(3);
-    else return setService(4);
   }
+  
 
   function handleSubmit(e) {
     e.preventDefault();
     const nameee = false;
     if (nameee) {
-      //   alert("Enter Name");
-      // } else if (image === "") {
-      //   alert("Enter a valid image URL");
-      // } else if (position === "") {
-      //   alert("Enter position");
-      // } else if (model === "") {
-      //   alert("Enter model");
-      // }
-      // else if(service===''){
-      //     alert('Enter service')
+    
     } else {
-      //   console.log(job);
       const newItem = {
-        name: name,
-        image: image,
-        position: position,
-        model: model,
-        servive: service,
+        name,
+        image,
+        position,
+        model,
+        service,
       };
-
       console.log(newItem);
 
       if (but) {
@@ -105,7 +84,7 @@ function CreateTech({
           });
       } else {
         fetch(
-          `https://carmotive-sinatra-backend.herokuapp.com/technicians/${id}`,
+          `https://carmotive-sinatra-backend.herokuapp.com/technicians/${idp}`,
           {
             method: "PATCH",
             headers: {
@@ -121,6 +100,7 @@ function CreateTech({
         setPosition("");
         setModel("");
         setService("");
+        console.log(newItem);
       }
 
       handleDisplay();
@@ -139,7 +119,6 @@ function CreateTech({
               value={name}
               onChange={handleName}
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="username"
               type="text"
               placeholder="Username"
             />
@@ -165,7 +144,6 @@ function CreateTech({
               value={position}
               onChange={handlePosition}
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              id="password"
               type="text"
               placeholder="Position"
             />
@@ -179,7 +157,6 @@ function CreateTech({
             value={model}
             onChange={handleModel}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-            id="password"
             type="text"
             placeholder="Car Model"
           />
@@ -190,7 +167,8 @@ function CreateTech({
           </label>
           <select
             value={service}
-            onChange={handleService}
+            onChange={(e)=>setService(e.target.value)}
+            // onChange={(e)=>console.log(e.target.value)}
             className="block appearance-none w-full bg-white border border-orange-400 hover:border-orange-400 px-4 py-2 pr-6 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
           >
             <option>Color Change</option>
@@ -205,7 +183,6 @@ function CreateTech({
           type="submit"
           value="Submit"
           name="submit"
-          id="submit"
         /> */}
         <button
           onClick={handleSubmit}

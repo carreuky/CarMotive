@@ -21,8 +21,8 @@ function Review() {
         fetch("https://carmotive-sinatra-backend.herokuapp.com/reviews")
           .then((r) => r.json())
           .then((data) => {
-            console.log('fff')
-            console.log(data)
+            // console.log('fff')
+            // console.log(data)
             setReviews(data);
           });
       }, []);

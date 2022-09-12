@@ -8,7 +8,7 @@ function About() {
   const [not, setNot] = useState(false)
 
   function handleNew(newTech) {
-    console.log(newTech);
+    // console.log(newTech);
     setTeam([...team, newTech]);
   }
 
@@ -53,6 +53,7 @@ function About() {
         // console.log(data)
         setTeam(data);
         setUnMutated(data)
+        // console.log(data)
       });
   }, []);
 
