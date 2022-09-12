@@ -1,20 +1,34 @@
 import React, { useState } from "react";
 
-function CreateTech({ handleDisplay,handleNew,but,idt, namet, imaget, positiont, servicet, modelt }) {
-  const [name, setName] = useState("");
-  const [image, setImage] = useState("");
-  const [position, setPosition] = useState("");
-  const [model, setModel] = useState("");
-  const [service, setService] = useState("");
-
+function CreateTech({
+  updateList,
+  handleDisplay,
+  handleNew,
+  but,
+  setName,
+  setImage,
+  setService,
+  setPosition,
+  setModel,
+  id,
+  name,
+  image,
+  position,
+  service,
+  model,
+}) {
+  // const [name, setName] = useState("");
+  // const [image, setImage] = useState("");
+  // const [position, setPosition] = useState("");
+  // const [model, setModel] = useState("");
+  // const [service, setService] = useState("");
 
   //name value
   function handleName(e) {
     console.log(e.target.value);
     setName(e.target.value);
+    console.log(name);
   }
-  
-
 
   //image value
   function handleImage(e) {
@@ -46,22 +60,21 @@ function CreateTech({ handleDisplay,handleNew,but,idt, namet, imaget, positiont,
     else return setService(4);
   }
 
-
   function handleSubmit(e) {
     e.preventDefault();
-    if (name === "") {
-      alert("Enter Name");
-    } else if (image === "") {
-      alert("Enter a valid image URL");
-    } else if (position === "") {
-      alert("Enter position");
-    } else if (model === "") {
-      alert("Enter model");
-    }
-    // else if(service===''){
-    //     alert('Enter service')
-    // }
-    else {
+    const nameee = false;
+    if (nameee) {
+      //   alert("Enter Name");
+      // } else if (image === "") {
+      //   alert("Enter a valid image URL");
+      // } else if (position === "") {
+      //   alert("Enter position");
+      // } else if (model === "") {
+      //   alert("Enter model");
+      // }
+      // else if(service===''){
+      //     alert('Enter service')
+    } else {
       //   console.log(job);
       const newItem = {
         name: name,
@@ -72,22 +85,43 @@ function CreateTech({ handleDisplay,handleNew,but,idt, namet, imaget, positiont,
       };
 
       console.log(newItem);
-      fetch("https://carmotive-sinatra-backend.herokuapp.com/technicians", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newItem),
-      })
-        .then((r) => r.json())
-        .then((newTech) => {
-          handleNew(newTech);
-          setName("");
-          setImage("");
-          setPosition("");
-          setModel("");
-          setService("");
-        });
+
+      if (but) {
+        fetch("https://carmotive-sinatra-backend.herokuapp.com/technicians", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newItem),
+        })
+          .then((r) => r.json())
+          .then((newTech) => {
+            handleNew(newTech);
+            setName("");
+            setImage("");
+            setPosition("");
+            setModel("");
+            setService("");
+          });
+      } else {
+        fetch(
+          `https://carmotive-sinatra-backend.herokuapp.com/technicians/${id}`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newItem),
+          }
+        )
+          .then((r) => r.json())
+          .then((updatedItem) => updateList(updatedItem));
+        setName("");
+        setImage("");
+        setPosition("");
+        setModel("");
+        setService("");
+      }
 
       handleDisplay();
     }
@@ -102,7 +136,7 @@ function CreateTech({ handleDisplay,handleNew,but,idt, namet, imaget, positiont,
               Technician name
             </label>
             <input
-              value={namet}
+              value={name}
               onChange={handleName}
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="username"
@@ -115,7 +149,7 @@ function CreateTech({ handleDisplay,handleNew,but,idt, namet, imaget, positiont,
               Image Url
             </label>
             <input
-              value={imaget}
+              value={image}
               onChange={handleImage}
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="url"
@@ -128,7 +162,7 @@ function CreateTech({ handleDisplay,handleNew,but,idt, namet, imaget, positiont,
               Position
             </label>
             <input
-              value={positiont}
+              value={position}
               onChange={handlePosition}
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
               id="password"
@@ -142,7 +176,7 @@ function CreateTech({ handleDisplay,handleNew,but,idt, namet, imaget, positiont,
             Car Model Expertise
           </label>
           <input
-            value={modelt}
+            value={model}
             onChange={handleModel}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
             id="password"
@@ -155,7 +189,7 @@ function CreateTech({ handleDisplay,handleNew,but,idt, namet, imaget, positiont,
             Select Profesionalism
           </label>
           <select
-            value={servicet}
+            value={service}
             onChange={handleService}
             className="block appearance-none w-full bg-white border border-orange-400 hover:border-orange-400 px-4 py-2 pr-6 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
           >
@@ -173,23 +207,13 @@ function CreateTech({ handleDisplay,handleNew,but,idt, namet, imaget, positiont,
           name="submit"
           id="submit"
         /> */}
-        {but ?
         <button
           onClick={handleSubmit}
           className="bg-white hover:bg-black text-black hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           type="button"
         >
-          Submit
+          {but ? "Save" : "Edit"}
         </button>
-        :
-        <button
-          onClick={handleSubmit}
-          className="bg-white hover:bg-black text-black hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="button"
-        >
-          Submit
-        </button>
-}
       </form>
     </div>
   );

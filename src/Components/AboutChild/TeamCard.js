@@ -2,7 +2,6 @@ import React,{useState} from "react";
 
 function TeamCard({SetDisp,disp,handle, delMember, id, name, image, position, service, model  }) {
   const [butg, SetBut] = useState(false);  
-  console.log(butg)
 
   const doing = () => {
     if (service === 1) return "Color Change";
@@ -25,11 +24,10 @@ function TeamCard({SetDisp,disp,handle, delMember, id, name, image, position, se
     delMember(id)
   }
 
-  function handlegetIDUpdate(id , name, image, position, model) {
-    console.log(id, name, image, position, model)
+  function handlegetIDUpdate(id , name, image, position, model,service) {
     SetDisp(!disp);
-    //SetBut(!butg)
-    handle(id, name, image, position, model,butg)
+    SetBut((butg) => !butg)
+    handle(id, name, image, position, model,service,butg)
   }
 
 
@@ -62,7 +60,7 @@ function TeamCard({SetDisp,disp,handle, delMember, id, name, image, position, se
           Delete
         </button>
         <button
-          onClick={()=>{handlegetIDUpdate(id , name, image, position, model)}}
+          onClick={()=>{handlegetIDUpdate(id , name, image, position, model,service)}}
           className="bg-white hover:bg-black hover:text-white text-gray-800 font-bold py-1 px-2 rounded mx-4"
         >
           Edit

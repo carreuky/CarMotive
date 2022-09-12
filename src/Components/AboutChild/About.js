@@ -32,10 +32,18 @@ function About() {
     }
     else
       setNot(!not)
-    
+  }
+  function updateList(updatedItem) {
+    const updatedItems = team.map((item) => {
+      if (item.id === updatedItem.id) {
+        return updatedItem;
+      } else {
+        return item;
+      }
+    });
 
-    
-
+    // setTeam(updatedItems);    
+    console.log(updatedItems);   
   }
 
   useEffect(() => {
@@ -109,7 +117,7 @@ function About() {
           </div>
         </div>
       </div>
-      <Team team={team} not={not} delMember={deleteMember} handleNew={handleNew} searchHandle={searchHandle} />
+      <Team updateList={updateList} team={team} not={not} delMember={deleteMember} handleNew={handleNew} searchHandle={searchHandle} />
     </div>
   );
 }

@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import CreateTech from "./CreateTech";
 import TeamCard from "./TeamCard";
 
-function Team({ team, delMember, handleNew, searchHandle }) {
+function Team({updateList, team, delMember, handleNew, searchHandle }) {
   const [disp, SetDisp] = useState(false);  
-  const [idt, SetIdt] = useState('');
-  const [name, SetName] = useState('');
-  const [image, SetImage] = useState('');
-  const [model, SetModel] = useState('');
-  const [position, SetPosition] = useState('');  
-  const [servicet, SetServicet] = useState('');
-  const [butt,SetButt]=useState()
+  const [id, setId] = useState('');
+  const [name, setName] = useState('');
+  const [image, setImage] = useState('');
+  const [model, setModel] = useState('');
+  const [position, setPosition] = useState('');  
+  const [service, setService] = useState('');
+  const [butt,SetButt]=useState(true)
 
 
   // const [notfound, SetNotFound] = useState(false);
@@ -21,16 +21,15 @@ function Team({ team, delMember, handleNew, searchHandle }) {
 
  
   function handleUp(id, name, image, position, model,service,butg){
-    // console.log(id, name, image, position, model)
-    SetIdt(id)
-    SetName(name)
-    SetImage(image)
-    SetPosition(position)
-    SetModel(model)
-    SetServicet(service)
-    // SetButt(but)
-    console.log(butg)
-    // console.log(team[id])
+    setId(id)
+    setName(name)
+    setImage(image)
+    setPosition(position)
+    setModel(model)
+    setService(service)
+    SetButt(butg)
+    console.log(butg);
+
   }
 
   const mems = team.map((mem) => {
@@ -81,7 +80,7 @@ function Team({ team, delMember, handleNew, searchHandle }) {
       </div>
       <div>
         {disp ? (
-          <CreateTech handleDisplay={handleDisplay} but={butt} handleNew={handleNew} idt={idt} imaget={image} namet={name} positiont={position} modelt={model} servicet={servicet}/>
+          <CreateTech updateList={updateList} handleDisplay={handleDisplay} but={butt} handleNew={handleNew} setId={setId} name={name} image={image} setImage={setImage} service={service} setService={setService} setName={setName} position={position} setPosition={setPosition} setModel={setModel} model={model} />
         ) : (
           form
         )}
